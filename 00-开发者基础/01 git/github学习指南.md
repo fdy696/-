@@ -36,6 +36,7 @@ Git 是 Linux 发明者 Linus 开发的一款新时代的版本控制系统，�
 git init  //创建一个git仓库
 git status //检查仓库变化
 git add a.txt//把a.txt添加到暂存区域
+git add . //把当前文件夹下所有变化的文件添加到暂存区
 git rm achecd  //把暂存区文件移除
 git commit -m 'first commit' //把暂存区域文件添加到仓库
 git log //查看所有commit描述
