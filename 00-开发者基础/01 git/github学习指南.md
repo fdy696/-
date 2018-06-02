@@ -76,4 +76,14 @@ git push origin master
 ```js
 git remote add origin git@github.com:stormzhang/test.git
 ```
+## 分支branch
+```js
+git branch dev  //创建一个指向master的开发分支，名字叫dev.
+git checkout dev //切换到dev分支
+git checkout -b a //创建并切换到a分支
+//在dev分支下做一些操作
+//git checkout master
+//git marge dev合并dev分支到master.
+
+```
 
