@@ -1,9 +1,11 @@
 ## DOCTYPE
 ## DTD
 ## meta
+```html
 meta charset
 meta viewport
-meta name="keywords" content="Ç°¶Ë£¬¼¢ÈË¹È"
-meta name='description' content="¼¢ÈË¹È£¬×î×¨ÒµµÄ»¥ÁªÍø¼¼ÄÜ½ÌÓı"
+meta name="keywords" content="å‰ç«¯ï¼Œé¥¥äººè°·"
+meta name='description' content="é¥¥äººè°·ï¼Œæœ€ä¸“ä¸šçš„äº’è”ç½‘æŠ€èƒ½æ•™è‚²"
+```
 title
 favicon.ico
