@@ -1,0 +1,9 @@
+## DOCTYPE
+## DTD
+## meta
+meta charset
+meta viewport
+meta name="keywords" content="前端，饥人谷"
+meta name='description' content="饥人谷，最专业的互联网技能教育"
+title
+favicon.ico
