@@ -88,4 +88,28 @@ git checkout -b a //创建并切换到a分支
 //git marge dev合并dev分支到master.
 
 ```
+### 场景：你是第一天来公司上班的，项目代码托管在GitLab，项目地址：git@lab.com:org/project.git,现在有一处代码需要你修改。请下完成此项任务中，与git/gitlab相关的操作步骤。
 
+第一步：$> ssh-keygen -t rss -C zhangsan@abc.com
+
+第二步：拷贝公钥到gitlab
+
+第三步：
+
+$> git config —global user.name zhangsan
+
+$> git config —global user.email zhangsan@abc.com
+
+第四步：$> git clone git@lab.com:org/project.git
+
+第五步：$> git checkout -b project-20170227-zhangsan-bugfix
+
+第六步：修改代码
+
+第七步：git status
+
+第八步：git add .
+
+第九不：git commit -am ‘bugfix’
+
+第八步：git push --set-upstream origin project-20170227-zhangsan-bugfix
