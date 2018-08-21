@@ -1,0 +1,37 @@
+## text-align
+
+## vertical-align
+
+
+他们两个本身都是用来处理文字位置的
+
+## 横向居中
+
+## vertical-align设置垂直居中，只对dispaly=inline|inline-block|table-cell有效
+
+
+## 非块级元素居中:对于文字和图片，只需要在其父级设置
+```
+text-align:center;
+```
+## 块级元素的居中分为两种情况：
+- 1.确定宽度的块级元素,在其自身设置
+```
+margin: 0 auto
+```
+- 2.非确定宽度的块级元素,
+```
+/*设置其*/
+display:inline-block
+在其父级
+text-align:center;
+
+## 垂直居中
+
+### 单行文本 line-height
+
+### 多行，利用vertical-align
+
+## 使用定位实现水平垂直居中
+
+
