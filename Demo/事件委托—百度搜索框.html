@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件委托|事件代理</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+
+		}
+		body {
+			font-size: "Microsoft Yahei";
+			font-size: 14px;
+
+		}
+		input,button {
+			border: none;
+			outline: none;
+		}
+		li {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+		#box {
+			position: absolute;
+			left: 50%;
+			top: 150px;
+			transform: translate(-50%,0);
+		}
+		#box #wrapper {
+			border: 1px solid green;
+			font-size: 0;
+			overflow: hidden;
+		}
+		#box #wrapper input {
+			height: 32px;
+			width: 300px;
+			float: left;
+			padding: 0 10px;
+
+		}
+		#box #wrapper button {
+			height: 32px;
+			width: 80px;
+			background: #3385ff;
+			float: left;
+		}
+		#box #search-list {
+			width: 450px;
+			border: 1px solid green;
+			position: absolute;
+			margin-top: -1px;
+			z-index: 99;
+			display: none
+		}
+
+		#box #search-list li a {
+			display: block;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 10px;
+		}
+
+		#box #search-list li a:hover {
+			background: #ccc;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="wrapper">
+		<input type="text" name="search-text" id="search-text">
+		<button>百度两下</button>
+		</div>
+		<ul id="search-list">
+			<li><a href="javascript:;">李克强会见</a></li>
+			<li><a href="javascript:;">总理会见</a></li>
+			<li><a href="javascript:;">金三胖访华</a></li>
+			<li><a href="javascript:;">老鼠爱吃猫</a></li>
+			<li><a href="javascript:;">小猫真可爱</a></li>
+			<li><a href="javascript:;">从前有座山</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		let oSearch = document.getElementById("search-text");
+		let oSearchList = document.getElementById("search-list");
+		let oSearchText = document.getElementById("search-text");
+		oSearch.onfocus = oSearch.onkeyup = function(){
+			if(oSearch.value.trim().length>0){
+				oSearchList.style.display = "block"
+			}else{
+				oSearchList.style.display = "none"
+			}
+		}
+
+		document.body.onclick = function(e){
+			e = e||window.event;
+			let target = e.target||e.srcElement;
+			if((target.tagName.toLowerCase()==="a") && (target.parentNode.parentNode.id="search-list")){
+				oSearchText.value = target.innerHTML;
+			};
+
+			oSearchList.style.display = "none"
+		}
+
+		oSearchText.onclick = function(e){
+			e = e||window.event;
+			let target = e.target||e.srcElement;
+			if((target.tagName.toLowerCase()==="input")&&(target.id="search-text")){
+				e.stopPropagation?e.stopPropagation():e.cancelBubble = true
+			}
+		}
+	</script>
+</body>
+</html>
