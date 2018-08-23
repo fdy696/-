@@ -1,0 +1,463 @@
+/*header start*/
+
+.header .top-nav-bg {
+	background-color: #f8f8f8;
+}
+.header .top-nav {
+	height: 30px;
+
+}
+
+.header .top-nav li {
+	float: right;
+	line-height: 30px;
+	font-size: 12px;
+
+}
+
+.header .top-nav li a {
+	height: 20px;
+	padding: 0 18px;
+	line-height: 20px;
+	display: inline-block;
+	border-right: 1px dotted #ccc;
+}
+
+.header .top-nav li a:hover {
+	color: #f36;
+}
+
+.header .top-nav li:first-child a{
+	border: none;
+	padding-right: 2px;
+}
+
+.header .top-banner {
+	display: block;
+	width: 1200px;
+	height: 75px;
+	position: relative;
+}
+
+.header .top-banner img{
+	display: block;
+	width: 1200px;
+	height: 75px;
+}
+.header .top-banner>span {
+	position: absolute;
+	display: block;
+	width: 18px;
+	height: 18px;
+	line-height: 20px;
+	right:10px;
+	top: 10px;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	font-size: 16px;
+
+}
+
+
+
+.header .top-banner {
+	display: block;
+	height: 75px;
+	background: lightblue;
+}
+.header .top-banner img {
+	display: block;
+}
+.header .search {
+	height: 120px;
+	padding-top: 20px;
+}
+.header .search .logo{
+	clear: both;
+
+}
+.header .search .logo h1 a {
+  text-indent: -9999px;
+	display: block;
+	width: 200px;
+	height: 50px;
+	background: url(../img/logo.png) no-repeat center center;
+	margin: 16px 142px 0 10px;
+}
+.header .search .search-main>ul.search-way li {
+	float: left;
+	width: 55px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+}
+.header .search .search-main>ul.search-way li.active {
+	background: #f36;
+	color: #fff;
+}
+.header .search .search-main .search-box {
+	border: 2px solid #f36;
+	width: 519px;
+	height: 31px;
+	display: none;
+}
+.header .search .search-main .show {
+	display: block;
+}
+.header .search .search-main .search-box input {
+	width: 444px;
+	height: 100%;
+	padding: 0 10px;
+}
+
+.header .search .search-main .search-box button {
+	background: #f36;
+	color: #fff;
+	width: 71px;
+	height: 100%;
+}
+
+.header .search .search-main .hot-search {
+	font-size: 12px;
+	margin-top: 14px;
+
+}
+
+.header .search .search-main .hot-search li {
+	margin: 0 10px 0 0;
+	float: left;
+}
+
+.header .search  a.download-code {
+	display: block;
+	width: 210px;
+	height: 150px;
+	margin-top: -20px;
+}
+.header .search  a.download-code img {
+	display: block;
+	height: 100%;
+}
+.header .nav {
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #f66;
+}
+
+.header .nav .nav-tab {
+	display: inline-block;
+	color: #666;
+	margin-right: 80px;
+}
+
+.header .nav .nav-all {
+		background: #f36;
+		width: 285px;
+	  text-align: center;
+	  color: #fff;
+	  position: relative;
+}
+.header .nav .nav-all .product-attr {
+	width: 285px;
+	height: 471px;
+	position: absolute;
+	left: 0;
+	top: 40px;
+	background-color: pink;
+}
+
+/*header end*/
+
+/*carousel start*/
+.carousel-part {
+
+
+}
+.carousel {
+	width: 895px;
+	height: 446px;
+	margin: 25px 0 0 304px;
+	background: red;
+}
+
+/*carousel end*/
+
+/*content start*/
+.content {
+
+}
+
+.content .ad-rec {
+	margin-top: 20px;
+}
+
+.content .ad-rec a {
+	display: inline-block;
+	float: left;
+	box-sizing: border-box;
+	width: 285px;
+	height: 285px;
+	margin-right: 20px;
+}
+
+.content .ad-rec a img{
+	display: block;
+	height: 100%;
+}
+
+.content .ad-rec a:last-child {
+	margin-right: 0;
+}
+
+.content .direct-mail>h2,
+.content .for-you>h2{
+	display: table-cell;
+	vertical-align: middle;
+	width: 1200px;
+	height: 108px;
+	text-align: center;
+
+}
+
+.content .direct-mail>h2 img {
+	display: inline-block;
+	width: 104px;
+	height: 40px;
+}
+
+.content .direct-mail {
+
+}
+
+.content .direct-mail .brand-collect  {
+	width: 283px;
+	height: 590px;
+}
+
+.content .direct-mail .brand-collect .brand-top {
+	display: block;
+	width: 282px;
+	height: 297px;
+}
+
+.content .direct-mail .brand-collect .brand-top img {
+	display: block;
+	width: 282px;
+	heigt: 100%;
+}
+.content .direct-mail .brand-collect .brand-logo {
+	border-left: 1px solid #eee;
+	border-top: 1px solid #eee;
+}
+.content .direct-mail .brand-collect .brand-logo a{
+	display: block;
+	width: 141px;
+	height: 97px;
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+	float: left;
+}
+
+.content .direct-mail .brand-collect .brand-logo a img {
+	display: block;
+	width: 140px;
+	height: 96px;
+}
+
+.content .direct-mail .show-one {
+	width: 304px;
+	height: 590px;
+}
+
+.content .direct-mail .show-one a {
+	display: block;
+	width: 304px;
+	height: 590px;
+}
+
+.content .direct-mail .show-other {
+	width: 591px;
+	height: 590px;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+
+}
+
+.content .direct-mail .show-other a {
+	float: left;
+	display: block;
+	width: 293px;
+	height: 294px;
+	border-left: 2px solid #eee;
+	border-top: 1px solid #eee;
+}
+
+.content .for-you .for-you-line1{
+	height: 284px;
+}
+
+.content .for-you .for-you-line1 a.xg-big {
+	display: block;
+	width: 590px;
+	height: 282px;
+	float: left;
+	margin-right: 22px;
+}
+
+.content .for-you .for-you-line1 a.xg-big img {
+	display: block;
+	width: 592px;
+	height: 282px;
+}
+
+.content .for-you .for-you-line1 a.xg-sm {
+	display: block;
+	width: 182px;
+	height: 282px;
+	float: left;
+	margin-right: 21px;
+}
+
+.content .for-you .for-you-line1 a.xg-sm:last-child {
+	margin-right: 0;
+}
+
+.content .for-you .for-you-line1 a.xg-sm img {
+	display: block;
+	width: 182px;
+	height: 282px;
+}
+
+.content .for-you .for-you-line2{
+	height: 220px;
+	margin-top: 20px;
+}
+
+.content .for-you .for-you-line2 .attr {
+	float: left;
+	width: 284px;
+	height: 220px;
+	background: #f9f9f9;
+	padding: 10px 0 0 18px;
+	margin-right: 20px;
+}
+
+.content .for-you .for-you-line2 .attr li {
+	float: left;
+	width: 81px;
+	height: 20px;
+	line-height: 20px;
+	margin: 10px 0;
+	text-align: center
+}
+
+.content .for-you .for-you-line2 .attr li a:hover {
+	color: #f36;
+}
+
+.content .for-you .for-you-line2 a.line2-a {
+	float: left;
+	display: block;
+	width: 285px;
+	height: 220px;
+  margin-right: 20px;
+}
+
+.content .for-you .for-you-line2 a.line2-a img{
+	float: left;
+  display: block;
+	width: 285px;
+	height: 220px;
+}
+
+.content .for-you .for-you-line2 a.line2-a:last-child {
+	margin-right: 0;
+}
+
+/*content end*/
+
+/*footer start*/
+.footer {
+	border-top: 1px solid #ddd;
+	background: #f5f5f5;
+	margin-top: 15px;
+	padding: 35px 70px 0px 76px;
+}
+
+.footer .something {
+}
+
+.footer .something ul.info>li {
+	float: left;
+	margin-right: 104px;
+}
+
+.footer .something  h4 {
+	font-weight: bold;
+	margin-bottom: 22px;
+	font-size: 16px;
+}
+
+.footer .something ul.info>li li a{
+	display: inline-block;
+	margin-bottom: 25px;
+}
+
+.footer .something ul.info li a:hover {
+	color: #f36;
+}
+
+.footer .something ul.follow {
+	padding-left: 124px;
+}
+
+.footer .something ul.follow li{
+	float: left;
+	padding-right: 55px;
+}
+
+.footer .something ul.follow li img {
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+}
+
+.footer .something ul.focus li a span{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/footersprite.png) no-repeat;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.footer .something ul.focus li a span.qzone {
+	background-position:  -28px;
+}
+
+.footer .something ul.focus li a span.tencent {
+	background-position:  -56px;
+}
+.footer .record {
+	border-top: 1px solid #e6e6e6;
+	height: 70px;
+}
+
+.footer .record p {
+	text-align: center;
+	color: #666;
+	margin-top: 12px;
+	font-size: 12px;
+}
+
+.footer .record p a:hover {
+	color: #f36;
+}
+
+/*footer end*/
+
+.sidebar {
+
+}

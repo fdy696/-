@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/*页面版心*/
+.layout {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/*浮动*/
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+
+/*清除浮动*/
+.clearfix:after {
+	content:" ";
+	display: block;
+	clear: both;
+	height: 0;
+	line-height: 0;
+}
+.clearfix {
+	zoom: 1;
+}
+
+/*设置页面主色*/
+.red {
+	  
+		color: #f36!important;
+}
