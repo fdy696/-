@@ -17,6 +17,12 @@
 ```
 document.cookie="name=value;expires=过期时间;path=访问路径;domain=访问域名;secure"
 ```
+**设置7天后删除cookie**
+```
+let d = new Date();
+d.setDate(d.getDate()+10);
+document.cookie = "name=;expires=d"
+```
 
 path：表示 cookie 影响到的路径，匹配该路径才发送这个 cookie。
 expires 和 maxAge：告诉浏览器 cookie 时候过期，maxAge 是 cookie 多久后过期的相对时间。不设置这两个选项时会产生 session cookie，session cookie 是 transient 的，当用户关闭浏览器时，就被清除。一般用来保存 session 的 session_id。
