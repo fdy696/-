@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <h3>商品列表</h3>
+    <ul id="pro-list">
+      <li>
+        <span>id1</span>
+        <span>单车</span>
+        <span>$100</span>
+        <a href="#">加入购物车</a>
+      </li>
+      <li>
+        <span>id2</span>
+        <span>单车2</span>
+        <span>$1000</span>
+        <a href="#">加入购物车</a>
+      </li>
+      <li>
+        <span>id3</span>
+        <span>单车3</span>
+        <span>$100</span>
+        <a href="#">加入购物车</a>
+      </li>
+      <li>
+        <span>id4</span>
+        <span>单车4</span>
+        <span>$100</span>
+        <a href="#">加入购物车</a>
+      </li>
+      <li>
+        <span>id5</span>
+        <span>单车5</span>
+        <span>$100</span>
+        <a href="#">加入购物车</a>
+      </li>
+      <li>
+        <span>id6</span>
+        <span>单车6</span>
+        <span>$100</span>
+        <a href="#l">加入购物车</a>
+      </li>
+    </ul>
+    <a href="cart2.html" id="show">查看购物车</a>
+    <script src="cookie.js"></script>
+    <script>
+      var aLis = document.querySelectorAll("#pro-list a");
+      var show = document.getElementById("show");
+
+      for(let i=0;i<aLis.length;i++){
+        aLis[i].onclick = function(){
+          var pid = this.parentNode.children[0].innerHTML;
+          var name = this.parentNode.children[1].innerHTML;
+          var price = this.parentNode.children[2].innerHTML;
+
+          var arr = getCookie("cart")?JSON.parse(getCookie("cart")):[];
+          var isExist = false;
+           arr.forEach(function(arrone){
+             if(arrone.id==pid){
+              arrone.num++;
+              isExist = true;
+             }
+           }) 
+           
+           if(!isExist){
+            var goods = {
+                id:pid,
+                name,
+                price,
+                num:1
+              };
+              arr.push(goods);
+           }
+
+          var d = new Date()
+          d.setDate(d.getDate()+10);
+          setCookie("cart",JSON.stringify(arr),d)
+
+        }
+      }
+
+      show.onclick = function(){
+        console.log(getCookie("cart"));
+        console.log(document.cookie);
+        console.log(2)
+      }
+
+
+    </script>
+</body>
+</html>

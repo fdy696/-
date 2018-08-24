@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h2>购物车页面</h2>
+  <ul id="list">
+
+  </ul>
+  <a href="#" id="clear">清空购物车</a>
+  <script src="cookie.js"></script>
+  <script>
+      let ulEle = document.getElementById("list");
+      let oClear = document.getElementById("clear");
+    function showCart(){
+      var  cookieStr =  getCookie("cart");
+      if(cookieStr){
+        var cookieArr = JSON.parse(cookieStr);
+        cookieArr.forEach(function(a){
+        var liEle = document.createElement("li");
+        liEle.innerHTML = `<span>商品名称：${a.name}</span> <span>商品数量：${a.num}</span>`;
+        ulEle.appendChild(liEle);
+        oClear.style.display="block"
+      })
+      }else{
+        console.log("您还没有添加购物车");
+        oClear.style.display="none"
+      }
+
+    }
+
+    showCart();
+    
+      oClear.onclick = function(){
+        removeCookie("cart");
+        showCart();
+        ulEle.innerHTML = "购物车为空"
+        oClear.style.display="none"
+      }
+
+ 
+
+
+  </script>
+</body>
+</html>
