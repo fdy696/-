@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>瀑布流布局</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <style type="text/css">
+body {
+  background-color:#ccc
+}
+.waterfall {
+  position: relative;
+  margin: 0 100px;
+
+}
+  .waterfall img {
+    position: absolute;
+    width: 268px;
+    border: 2px solid #ccc;
+    padding: 3px;
+    width: 270px;
+    margin-top: 10px;
+    margin-right: 5px;
+    text-align: center;
+  }
+  </style>
+</head>
+<body>
+  <div class="waterfall" id="waterfall">
+    <img src="images/0.png" alt="">
+    <img src="images/1.png" alt="">
+    <img src="images/2.png" alt="">
+    <img src="images/3.png" alt="">
+    <img src="images/4.png" alt="">
+    <img src="images/5.png" alt="">
+    <img src="images/6.png" alt="">
+    <img src="images/7.png" alt="">
+    <img src="images/8.png" alt="">
+    <img src="images/9.png" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+  </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  const oFall = document.getElementById("waterfall");
+  const imgList = oFall.querySelectorAll("img");
+
+  imgList.forEach(function(item,index){
+    item.src = "images/"+index+".png";
+  })
+
+ // 瀑布流逻辑
+ var imgWidth = $('.waterfall img').outerWidth();
+ var colCount = parseInt($('.waterfall').width()/imgWidth);
+
+ var colHeight = [];
+ for(var i=0;i<colCount;i++){
+   colHeight[i] = 0;
+ }
+
+ function getMin(colCount,colHeight){
+   console.log(colCount,colHeight)
+   var minValue = colHeight[0];
+   var minIndex = 0;
+   for(var j=0;j<colCount;j++){
+     if(minValue>colHeight[j]){
+       minValue = colHeight[j];
+       minIndex = j
+     }
+   }
+   return {
+     minValue,
+     minIndex
+   }
+   
+ }
+
+ // 当图片加载时，进行排版
+ $('.waterfall img').on('load',function(){
+   var min = getMin(colCount,colHeight);
+
+   $(this).css({
+     top: min.minValue,
+     left: imgWidth*min.minIndex
+   })
+   colHeight[min.minIndex] += $(this).outerHeight();
+ })
+
+
+ // 当页面尺寸发生变化时排版
+ $(window).on('resize',function(){
+   var colCount = parseInt($('.waterfall').width()/imgWidth);
+   
+   var colHeight = [];
+   for(var i=0;i<colCount;i++){
+     colHeight[i] = 0;
+   }
+   $('.waterfall img').each(function(){
+    var min = getMin(colCount,colHeight);
+    $(this).css({
+      top: min.minValue,
+      left: imgWidth*min.minIndex
+    })
+    colHeight[min.minIndex] += $(this).outerHeight();
+   })
+ })
+
+
+</script>
+</html>
