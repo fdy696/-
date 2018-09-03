@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>百度下拉框</title>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function show(json){
+      ul1.innerHTML = "";
+      json.s.forEach(str=>{
+        var liEle = document.createElement("li");
+        liEle.innerHTML = str;
+        ul1.appendChild(liEle);
+      })
+    } 
+ 
+    window.onload = function(){
+      var ul1 = document.getElementById("ul1");
+      var input1 = document.getElementById("text");
+
+      console.log(input1)
+      input1.oninput = function(){
+        console.log(input1.value)
+        var oS = document.createElement("script");
+        oS.src = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${input1.value}&cb=show`;
+        document.head.appendChild(oS);
+      }
+    }
+  </script>
+ 
+</head>
+<body>
+<div class="search">
+  <input type="text" id="text">
+  <ul id="ul1"></ul>
+</div>
+  
+</body>
+</html>

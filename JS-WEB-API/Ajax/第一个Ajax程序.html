@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>请求数据</button>
+  <ul></ul>
+<form action="1.php" method="post" enctype="application/x-www-form-urlencoded"></form>
+  <script>
+  oBtn = document.querySelector("button");
+  oUl = document.querySelector("ul");
+  
+
+
+// 发送请求
+function $ajax(fn){
+    // 创建xhr对象
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST',"https://www.easy-mock.com/mock/5b814f26e8258338ac712614/myApi/post",true);
+    xhr.send(null);
+    xhr.onreadystatechange= function(){
+      if(xhr.readyState===4){
+      var value = xhr.responseText;
+      var arr = JSON.parse(value);
+      fn(arr);
+
+      }
+    }
+}
+
+function addEle(arr){
+  arr.forEach(a=>{
+    var liEle = document.createElement("li");
+    liEle.innerHTML = a.title;
+    oUl.appendChild(liEle);
+  })
+}
+oBtn.onclick = function(){
+    $ajax(addEle)
+}
+
+
+  </script>
+</body>
+</html>

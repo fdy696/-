@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*header start*/
 
 .header .top-nav-bg {
@@ -5,14 +7,11 @@
 }
 .header .top-nav {
 	height: 30px;
-
 }
-
 .header .top-nav li {
 	float: right;
 	line-height: 30px;
 	font-size: 12px;
-
 }
 
 .header .top-nav li a {
@@ -31,7 +30,7 @@
 	border: none;
 	padding-right: 2px;
 }
-
+/* header-banner s*/
 .header .top-banner {
 	display: block;
 	width: 1200px;
@@ -44,24 +43,8 @@
 	width: 1200px;
 	height: 75px;
 }
-.header .top-banner>span {
-	position: absolute;
-	display: block;
-	width: 18px;
-	height: 18px;
-	line-height: 20px;
-	right:10px;
-	top: 10px;
-	background: rgba(0,0,0,0.5);
-	color: #fff;
-	text-align: center;
-	cursor: pointer;
-	font-size: 16px;
 
-}
-
-
-
+/* top banner s */
 .header .top-banner {
 	display: block;
 	height: 75px;
@@ -70,10 +53,15 @@
 .header .top-banner img {
 	display: block;
 }
+
+/* top-banner e */
 .header .search {
 	height: 120px;
 	padding-top: 20px;
 }
+
+/* search s */
+/* logo s */
 .header .search .logo{
 	clear: both;
 
@@ -86,6 +74,10 @@
 	background: url(../img/logo.png) no-repeat center center;
 	margin: 16px 142px 0 10px;
 }
+
+/* logo e */
+
+/* 搜索框区域 */
 .header .search .search-main>ul.search-way li {
 	float: left;
 	width: 55px;
@@ -118,7 +110,9 @@
 	width: 71px;
 	height: 100%;
 }
+/* 搜索框结束 */
 
+/* 热搜词 s */
 .header .search .search-main .hot-search {
 	font-size: 12px;
 	margin-top: 14px;
@@ -129,7 +123,9 @@
 	margin: 0 10px 0 0;
 	float: left;
 }
+/* 热搜词 e */
 
+/* 二维码图片样式 */
 .header .search  a.download-code {
 	display: block;
 	width: 210px;
@@ -140,6 +136,8 @@
 	display: block;
 	height: 100%;
 }
+
+/* 分类导航条样式 */
 .header .nav {
 	height: 40px;
 	line-height: 40px;
@@ -159,18 +157,127 @@
 	  color: #fff;
 	  position: relative;
 }
-.header .nav .nav-all .product-attr {
-	width: 285px;
-	height: 471px;
+
+/*全部商品列表的样式*/
+ .nav .nav-all .product-attr{
 	position: absolute;
-	left: 0;
 	top: 40px;
-	background-color: pink;
+	left: 0;
+	width: 285px;
+	box-sizing: border-box;
+	border: 1px solid #f36;
+	border-top: 0;
+	background-color: #fff;
 }
+.nav .nav-all .product-attr li.list{  
+	/*正常时候的样式*/
+	position: relative;
+	border-bottom: 1px dashed #ccc;
+	margin: 0 20px;
+	height: 42px;
+	line-height: 41px;
+}
+.nav .nav-all .product-attr li.list:last-child {
+	border-bottom: none;
+}
+
+.nav .nav-all .list-content {
+	position: relative;
+	z-index: 8;
+}
+
+
+/* hover时触发相关样式 */
+.nav .nav-all  li.list:hover{  /*列被激活时候的样式，覆盖正常的样式*/
+	border-bottom: 1px solid #f36;
+	border-top: 1px solid #f36;
+	/* 使border整行显示，而不改变视图 */
+	margin: 0;
+	padding-left: 20px;  
+	margin-top: -1px;
+	/* 加上border超出1像素，覆盖右侧 */
+	width: 284px;
+	/* 比原来大一像素，保证视图高度一致 */
+	height: 43px
+}
+
+.nav .nav-all li.list:hover .list-content {
+	position: relative;
+	border-right: 1px solid #fff;
+	margin-right: -1px;
+	z-index: 8;
+}
+
+.nav .nav-all  li.list:hover ul.nav-list {
+	display: block;
+} 
+
+
+.nav .nav-all .list-content h3.list-title{
+	float: left;
+	width: 29px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: normal;
+	margin-right: 20px;
+}
+.nav .nav-all .list-content p.list-para{
+	float: left;
+	width: 180px;
+	overflow: hidden;
+	font-size: 12px;
+	color: #666;
+}
+.nav .nav-all .list-content p.list-para a{
+	float: left;
+	margin-right: 10px;
+}
+.nav .nav-all .list-content i{
+	float: left;
+	color: #aaa;
+	font-size: 14px;
+}
+/* 二级导航盒子 */
+.nav .nav-all  li.list ul.nav-list{
+	display: none;
+	position: absolute;
+	top: -1px;
+	left: 283px;
+	width: 260px;
+	border: 1px solid #f36;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+	background-color: #fff;
+	z-index: 4;
+}
+
+.nav .nav-all  li.list ul.nav-list h4{
+	height: 20px;
+	line-height: 20px;
+	padding-top: 12px;
+	padding-bottom: 20px;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: left;
+}
+.nav .nav-all  li.list ul.nav-list p{
+	font-size: 12px;
+	line-height: 24px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+.nav .nav-all li.list ul.nav-list p a{
+	float: left;
+	margin-right: 14px;
+}
+
+/* 二级导航盒子结束 */
 
 /*header end*/
 
 /*carousel start*/
+
 .carousel-part {
 
 
@@ -178,17 +285,15 @@
 .carousel {
 	width: 895px;
 	height: 446px;
-	margin: 25px 0 0 304px;
+	margin: 17px 0 0 304px;
 	background: red;
 }
 
 /*carousel end*/
 
 /*content start*/
-.content {
 
-}
-
+/* 推荐 */
 .content .ad-rec {
 	margin-top: 20px;
 }
@@ -211,6 +316,8 @@
 	margin-right: 0;
 }
 
+/* 直邮 */
+
 .content .direct-mail>h2,
 .content .for-you>h2{
 	display: table-cell;
@@ -227,10 +334,6 @@
 	height: 40px;
 }
 
-.content .direct-mail {
-
-}
-
 .content .direct-mail .brand-collect  {
 	width: 283px;
 	height: 590px;
@@ -245,7 +348,7 @@
 .content .direct-mail .brand-collect .brand-top img {
 	display: block;
 	width: 282px;
-	heigt: 100%;
+	height: 100%;
 }
 .content .direct-mail .brand-collect .brand-logo {
 	border-left: 1px solid #eee;
@@ -386,9 +489,6 @@
 	padding: 35px 70px 0px 76px;
 }
 
-.footer .something {
-}
-
 .footer .something ul.info>li {
 	float: left;
 	margin-right: 104px;
@@ -457,7 +557,3 @@
 }
 
 /*footer end*/
-
-.sidebar {
-
-}
