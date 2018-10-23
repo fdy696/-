@@ -1,0 +1,165 @@
+<template>
+  <div class="sidebar">
+    <div class="logo">
+      <h3>欢迎进入万维星辰日志集中管理系统</h3>
+    </div>
+    <div class="list">
+      <el-input
+        size = 'mini'
+        placeholder="Search"
+        v-model="filterText">
+      </el-input>
+
+      <el-tree
+        class="filter-tree"
+        :data="data2"
+        :props="defaultProps"
+        default-expand-all
+        :filter-node-method="filterNode"
+        @node-click = 'handleNodeClick'
+        ref="tree2">
+      </el-tree>
+    </div>
+
+    <!-- <div class="list">
+      <router-link to='/management/file'><i class="iconfont icon-fileoperation"></i>文件管理
+      </router-link>
+            <router-link to='/management/policy'><i class="iconfont icon-policy"></i>策略管理
+      </router-link>
+            <router-link to='/management/monitoring'><i class="iconfont icon-monitor"></i>系统监控
+      </router-link>
+    </div> -->
+  </div>
+</template>
+
+<script>
+export default {
+  watch: {
+      filterText(val) {
+        this.$refs.tree2.filter(val);
+      }
+    },
+
+    methods: {
+      filterNode(value, data) {
+        if (!value) return true;
+        return data.label.indexOf(value) !== -1;
+      },
+      handleNodeClick(obj){
+          console.log(222);
+          console.log(obj);//打印出来看哪个值对你有用
+          this.$router.push(obj.path);
+      }
+    },
+  data() {
+      return {
+        filterText: '',
+        data2: [{
+          id: 1,
+          label: '登录界面',
+          path: '/index'
+        }, {
+          id: 2,
+          label: '系统框架',
+        }, {
+          id: 3,
+          label: '内容页面',
+        }, {
+          id: 4,
+          label: '日志源管理',
+        }, {
+          id: 5,
+          label: '日志传输记录',
+        }, {
+          id: 6,
+          label: '文件管理页面',
+          children: [{
+            id: 7,
+            label: '文件管理'
+          }, {
+            id: 8,
+            label: '二级 3-2'
+          }]
+        }, {
+          id: 3,
+          label: '存储管理页面',
+          children: [{
+            id: 7,
+            label: '二级 3-1'
+          }, {
+            id: 8,
+            label: '二级 3-2'
+          }]
+        }, {
+          id: 3,
+          label: '报告',
+          children: [{
+            id: 7,
+            label: '二级 3-1'
+          }, {
+            id: 8,
+            label: '二级 3-2'
+          }]
+        }, {
+          id: 3,
+          label: '系统监控页面',
+          children: [{
+            id: 7,
+            label: '二级 3-1'
+          }, {
+            id: 8,
+            label: '二级 3-2'
+          }]
+        }],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        }
+      };
+    }
+}
+</script>
+<style lang="less" scoped>
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    background-color: #f5f5f5;
+    height: 100%;
+    box-shadow: 1px 0 1px #000;
+    font-size: 12px;
+    .logo {
+      height: 70px;
+      line-height: 70px;
+      text-align: center;
+      font-size: 13px;
+      background-color: #fff
+      }
+      .list {
+        padding-left: 15px;
+        padding-right: 15px;
+        .el-input ,.el-tree {
+          background-color: #f5f5f5;
+          padding-top: 10px
+
+        }
+      }
+    div.list {
+      a {
+        height: 35px;
+        padding-left: 35px;
+        line-height: 35px;
+        display: block;
+        color: #fff;
+        i { display: inline-block;
+            height: 35px;
+            line-height: 35px;}
+      }
+      .router-link-active {background: red;}
+    }
+  }
+</style>
+
+
+
