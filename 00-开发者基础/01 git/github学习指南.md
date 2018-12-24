@@ -43,7 +43,7 @@ git add xx命令可以将xx文件添加到暂存区，如果有很多改动可�
 注意 -A 选项后面还有一个句点。 git add -A表示添加所有内容， git add . 表示添加新文件和编辑过的文件不包括删除的文件; git add -u 表示添加编辑或者删除的文件，不包括新添加的文件。
 git rm achecd  //把暂存区文件移除
 git commit -m 'first commit' //把暂存区域文件添加到仓库
-git log //查看所有commit描述
+git log //查看所有commit描述，相当于历史纪录
 git branch //查看当前仓库下所有分支，前面有*代表当前所在分支
 git branch ａ　//新建a分支
 git checkout a //切换到a分支
@@ -53,6 +53,7 @@ git branch -d a   //删除已合并的dev分支
 git branch -D a  //强制删除a分支·
 
 ```
+
 
 ## 远程仓库
 将本地仓库和远程仓库连接主要由两种方式
@@ -92,6 +93,25 @@ git checkout -b a //创建并切换到a分支
 //git marge dev合并dev分支到master.
 
 ```
+## 远程仓库冲突及版本回退
+```js
+git log  // 查看提交历史纪录
+q // 退出git log
+
+
+// commit 9843dbb2d0ba74e44060ebc23f7155aa2c83a448
+// Author: fengyong <fengyong@xdstar.net>
+// Date:   Mon Dec 24 10:39:25 2018 +0800
+// git远程强制命令
+
+git reset --hard HEAD^ //返回上一版
+
+git reset --hard commit版本号  //例如9843dbb2d0ba74e44060ebc23f7155aa2c83a448
+
+
+```
+
+
 ### 场景：你是第一天来公司上班的，项目代码托管在GitLab，项目地址：git@lab.com:org/project.git,现在有一处代码需要你修改。请下完成此项任务中，与git/gitlab相关的操作步骤。
 
 第一步：$> ssh-keygen -t rss -C zhangsan@abc.com
