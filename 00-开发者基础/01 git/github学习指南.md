@@ -110,6 +110,15 @@ git reset --hard commit版本号  //例如9843dbb2d0ba74e44060ebc23f7155aa2c83a
 
 
 ```
+## 提交冲突
+```
+git stash  // 把当前代码保存起来
+
+git pull  // 同步线上
+
+git stash pop // 把存起来的代码加入本地
+
+```
 
 
 ### 场景：你是第一天来公司上班的，项目代码托管在GitLab，项目地址：git@lab.com:org/project.git,现在有一处代码需要你修改。请下完成此项任务中，与git/gitlab相关的操作步骤。
