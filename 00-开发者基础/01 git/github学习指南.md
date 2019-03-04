@@ -128,6 +128,13 @@ esc // 退出
 :wq  // 回车
 
 ```
+### 获取公钥
+```
+cd ~/.ssh
+ls
+cat xxx
+
+```
 
 
 ### 场景：你是第一天来公司上班的，项目代码托管在GitLab，项目地址：git@lab.com:org/project.git,现在有一处代码需要你修改。请下完成此项任务中，与git/gitlab相关的操作步骤。
