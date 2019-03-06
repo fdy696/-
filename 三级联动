@@ -1,0 +1,93 @@
+<template>
+  <div class="filter">
+    <span style='margin-right: 10px;color: #17233d'>行政区:</span>
+    <el-cascader
+      :options="options"
+      size = "medium"
+      v-model="selectedOptions"
+      @change = "handleChange"
+      change-on-select
+      placeholder="河南省"
+      :props="props"
+    ></el-cascader>
+  </div>
+</template>
+
+<script>
+import Region from '@/apis/region'
+  export default {
+    data() {
+      return {
+        selectedOptions: [],
+        options: [{
+          name: '河南省',
+          item: {},
+          cities: []
+        }],
+        props: {
+          label: 'name',
+          value: 'item',
+          children: 'cities'
+        }
+      };
+    },
+    created(){
+      // 默认选中河南省，后期删除
+      this.selectedOptions = [{id: "410000",name: "河南省"}]
+      Region.province().then(res=>{
+        this.options = res.data.provinceList.map(item=>{
+          if(item.name==='河南省'){
+            item.cities = []
+          }else {
+            item.disabled = true
+          }
+           return item
+        })
+      })
+    },
+
+    methods: {
+      handleChange(val){
+        this.$emit('change',this.selectedOptions)
+        if(val.length==1){
+          Region.city(val[0].id).then(res=>{
+            this.options.find(item=>item.name==='河南省').cities = res.data.cityList.map(item=>{
+              item.cities = []
+              return item
+            })
+          })
+        }else if(val.length==2){
+          Region.county(val[1].id).then(res=>{
+            this.options.find(item=>item.name==='河南省')
+              .cities.find(item=>item.item.id==val[1].id).cities = res.data.districtList.map(item=>{
+                return item
+              })
+          })
+        }
+      },
+    }
+  };
+</script>
+
+<style lang="less">
+.filter .el-cascader {
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+ /* WebKit browsers */
+color: #666;
+font-size: 14px;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+/* Mozilla Firefox 4 to 18 */
+color: #666;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+ /* Mozilla Firefox 19+ */
+color: #666;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+ /* Internet Explorer 10+ */
+color: #666;
+}
+}
+</style>
