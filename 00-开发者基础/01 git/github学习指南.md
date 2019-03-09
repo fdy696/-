@@ -119,6 +119,22 @@ git pull  // 同步线上
 git stash pop // 把存起来的代码加入本地
 
 ```
+## git pull冲突
+```
+Please enter a commit message to explain why this merge is necessary.
+
+i  //进入输入模式
+esc // 退出
+:wq  // 回车
+
+```
+### 获取公钥
+```
+cd ~/.ssh
+ls
+cat xxx
+
+```
 
 
 ### 场景：你是第一天来公司上班的，项目代码托管在GitLab，项目地址：git@lab.com:org/project.git,现在有一处代码需要你修改。请下完成此项任务中，与git/gitlab相关的操作步骤。
