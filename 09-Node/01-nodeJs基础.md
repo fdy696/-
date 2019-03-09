@@ -22,4 +22,4 @@ NodeJs和其他后台语言的不同:
 
 ### node搭建服务器
 
-http
+http-server
